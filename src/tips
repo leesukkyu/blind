@@ -1,0 +1,7 @@
+this.$vuetify.theme.primary = "#4caf50";
+
+store.getters.loginUser.id
+
+app.$i18n.setLocaleMessage('en', require('./en').default)
+
+{{ $t("msg.hello") }}

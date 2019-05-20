@@ -1,0 +1,65 @@
+.mainWrap .v-tooltip__content {
+  display: none;
+}
+
+.mainWrap.help .v-tooltip__content {
+  display: block;
+}
+
+/* override */
+
+.theme--light.v-table {
+  background-color: transparent !important;
+}
+
+.theme--light.v-datatable .v-datatable__actions {
+  background-color: transparent !important;
+}
+
+.v-treeview-node {
+  border-bottom: solid 1px transparent;
+}
+
+.activeColor {
+  background: #d8edeb !important;
+  border-bottom: solid 1px #b1dbd8 !important;
+}
+
+.only-border {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  border-width: 3px;
+  border-style: solid;
+  background-color: transparent !important;
+}
+
+.green.only-border {
+  background-color: transparent !important;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+
+.transparent .v-input__slot {
+  background: transparent !important;
+}
+
+.v-btn-toggle .v-btn:not(.v-btn--active) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.v-btn-toggle .v-btn.v-btn--active {
+  color: #fff !important;
+}
+
+.v-btn-toggle .v-btn:not(:last-child) {
+  border-color: #616161 !important;
+}
+
+.v-btn-toggle .v-btn {
+}
