@@ -91,7 +91,7 @@ export default {
     model: {
       immediate: false,
       handler: function(newData, oldData) {
-        var temp, value;
+        let temp, value;
         // 유저가 행동한 경우 체크
         if (this.user) {
           value = newData[newData.length - 1];
@@ -172,7 +172,7 @@ export default {
       this.fullNameList = [];
       this.fullNameMap = {};
       this.model = [];
-      for (var i in this.list) {
+      for (let i in this.list) {
         this.fullNameList.push(this.list[i].fullName);
         this.fullNameMap[this.list[i].fullName] = this.list[i];
         this.model.push(this.list[i].fullName);
@@ -181,8 +181,8 @@ export default {
 
     // 칩을 클릭한 경우
     onClickChip: function(item, event, index) {
-      var _this = this;
-      var _event = event;
+      let _this = this;
+      let _event = event;
       this.editIndex = index;
       setTimeout(function() {
         _event.target.parentElement.querySelector("input").focus();
@@ -195,7 +195,7 @@ export default {
 
     // 블러 이벤트 리스너
     blur: function(item, $event, index) {
-      var newValue = $event.target.value;
+      let newValue = $event.target.value;
       this.editIndex = -1;
       if (this.oldValue == newValue) {
         return;
@@ -208,7 +208,7 @@ export default {
 
     // 엔터 이벤트 리스너
     enter: function(item, $event, index) {
-      var newValue = $event.target.value;
+      let newValue = $event.target.value;
       if (this.oldValue == newValue) {
         return;
       }
@@ -225,8 +225,8 @@ export default {
 
     // 블러나 엔터시 중복값이 있나 확인.
     checkError: function(item, $event, index) {
-      var result = true;
-      var newValue = $event.target.value;
+      let result = true;
+      let newValue = $event.target.value;
       // 문제가 있는 경우 체크
       if (
         // 1. 중복된 값이 있는 경우

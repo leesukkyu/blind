@@ -63,15 +63,15 @@ export default {
     };
   },
   beforeMount: function() {
-    var _this = this;
+    let _this = this;
     _this.$http
       .post("/menu_api/user_menu_list", {
         userid: this.$store.getters.getLoginInfo.loginInfo.id
       })
       .then(function(response) {
-        var list = [];
+        let list = [];
         if (response.status == "Y") {
-          for (var i in response.list) {
+          for (let i in response.list) {
             list.push(response.list[i]);
           }
           _this.menuList = list;

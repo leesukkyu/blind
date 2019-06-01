@@ -55,7 +55,7 @@ export default {
             .then(rs => {
               if ((rs.status = "Y")) {
                 this.eventBus.$emit("requestProductTreeLoad");
-                for (var i in this.option.tagScript.list) {
+                for (let i in this.option.tagScript.list) {
                   if (this.option.tagScript.list[i].idx == data.item.idx) {
                     this.option.tagScript.list.splice(i, 1);
                     break;
@@ -74,7 +74,7 @@ export default {
             .then(rs => {
               if ((rs.status = "Y")) {
                 this.eventBus.$emit("requestProductTreeLoad");
-                for (var i in this.option.tagScript.list) {
+                for (let i in this.option.tagScript.list) {
                   if (this.option.tagScript.list[i].idx == data.item.idx) {
                     this.option.tagScript.list[i].name = data.newName;
                     this.$set(
@@ -109,9 +109,9 @@ export default {
     onChangeProductTreeActiveList: function() {
       if (this.pageStorage.productTreeActiveItemList && this.pageStorage.productTreeActiveItemList.length) {
         this.option.tagScript.disabled = false;
-        var list = this.pageStorage.productTreeActiveItemList[0].child;
+        let list = this.pageStorage.productTreeActiveItemList[0].child;
         if (list) {
-          for (var i in list) {
+          for (let i in list) {
             list[i].name = list[i].text;
           }
           this.option.tagScript.list = list;

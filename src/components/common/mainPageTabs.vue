@@ -85,7 +85,7 @@ export default {
   }
 };
 
-var tabCodeMap = {
+let tabCodeMap = {
   // 은행 등록 확인
   mn1_002_0001: "xxx"
 };

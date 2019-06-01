@@ -197,7 +197,7 @@ export default {
         });
     },
     save: function() {
-      var rq;
+      let rq;
       rq = this.editedItem;
       rq.userid = this.$store.getters.getLoginInfo.loginInfo.id;
       rq.idx = this.pageStorage.productTreeActiveItemList[0].idx;
@@ -211,7 +211,7 @@ export default {
       });
     },
     remove: function() {
-      var rq = {};
+      let rq = {};
       rq.userid = this.$store.getters.getLoginInfo.loginInfo.id;
       rq.idx = this.pageStorage.productTreeActiveItemList[0].idx;
       this.$http.post("/goods_api/goods_processval_del", rq).then(rs => {

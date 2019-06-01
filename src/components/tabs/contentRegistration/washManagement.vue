@@ -60,8 +60,8 @@ export default {
         });
     },
     createParentData : (function(){
-      var loop = function(list, parent){
-        for(var i in list){
+      let loop = function(list, parent){
+        for(let i in list){
           list[i].parent = parent;
           if(list[i].child){
             loop(list[i].child, list[i])
@@ -69,7 +69,7 @@ export default {
         }
       }
       return function(list){
-        for(var i in list){
+        for(let i in list){
           if(list[i].child){
             loop(list[i].child, list[i]);
           }

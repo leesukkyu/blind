@@ -137,15 +137,15 @@ export default {
   methods: {
     loadCustomList: function(cb) {
       console.log(arguments);
-      var _this = this;
+      let _this = this;
       _this.$http
         .post("/customer_api/custom_list", {
           app_idx: this.$store.getters.getLoginInfo.loginInfo.app_idx
         })
         .then(response => {
-          var list = response.data ? response.data : [];
+          let list = response.data ? response.data : [];
           // 주소 1, 2를 합쳐준다.
-          for (var i in list) {
+          for (let i in list) {
             list[i].app_address = list[i].app_addr1 + " " + list[i].app_addr2;
           }
           this.$set(this.pageStorage, "customList", list);

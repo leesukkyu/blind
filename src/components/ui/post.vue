@@ -22,7 +22,7 @@
 </template>
 
 <script>
-var globalCount = {
+let globalCount = {
   id: 0
 };
 export default {
@@ -56,15 +56,15 @@ export default {
   methods: {
     open: function() {
       // 우편번호 찾기 찾기 화면을 넣을 element
-      var element_wrap = document.getElementById("post_wrap_" + this.count);
-      var _this = this;
+      let element_wrap = document.getElementById("post_wrap_" + this.count);
+      let _this = this;
       console.log("xx");
 
       daum.postcode.load(function() {
         new daum.Postcode({
           oncomplete: function(data) {
-            var addr = ""; // 주소 변수
-            var extraAddr = ""; // 참고항목 변수
+            let addr = ""; // 주소 변수
+            let extraAddr = ""; // 참고항목 변수
             if (data.userSelectedType === "R") {
               // 사용자가 도로명 주소를 선택했을 경우
               addr = data.roadAddress;

@@ -323,7 +323,7 @@ export default {
         })
         .then(rs => {
           this.cardList = [];
-          for (var i in rs.data) {
+          for (let i in rs.data) {
             this.cardList.push(rs.data[i].name);
           }
         });
@@ -351,7 +351,7 @@ export default {
       }
     },
     makeRq() {
-      var rq = {
+      let rq = {
         app_idx: this.$store.getters.getLoginInfo.loginInfo.app_idx,
         userid: this.$store.getters.getLoginInfo.loginInfo.id,
         code: this.editedItem.code,
@@ -397,7 +397,7 @@ export default {
         });
     },
     update() {
-      var rq = this.makeRq();
+      let rq = this.makeRq();
       rq.idx = this.editedItem.idx;
       this.$http
         .post("/customer_api/custom_edit", rq)
@@ -414,7 +414,7 @@ export default {
         });
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

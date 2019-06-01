@@ -221,7 +221,7 @@ export default {
       this.option.table.list = list;
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {
@@ -245,7 +245,7 @@ export default {
     },
     makeRq(isConfirm) {
       console.log(this.editedItem.app_status_memo);
-      var rq = {
+      let rq = {
         idx: this.editedItem.idx,
         status_yn: isConfirm ? 1 : 0,
         status_text: this.editedItem.app_status_memo
@@ -253,7 +253,7 @@ export default {
       return rq;
     },
     save(item, isConfirm) {
-      var api = "";
+      let api = "";
       if (isConfirm) {
         api = "/customer_api/custom_status_y";
       } else {

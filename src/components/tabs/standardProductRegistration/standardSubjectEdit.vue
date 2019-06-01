@@ -49,7 +49,7 @@ export default {
             })
             .then(rs => {
               if ((rs.status = "Y")) {
-                for (var i in this.option.tagScript.list) {
+                for (let i in this.option.tagScript.list) {
                   if (this.option.tagScript.list[i].idx == data.item.idx) {
                     this.option.tagScript.list.splice(i, 1);
                     break;
@@ -70,7 +70,7 @@ export default {
             })
             .then(rs => {
               if ((rs.status = "Y")) {
-                for (var i in this.option.tagScript.list) {
+                for (let i in this.option.tagScript.list) {
                   if (this.option.tagScript.list[i].idx == data.item.idx) {
                     this.option.tagScript.list[i].name = data.newName;
                     this.$set(
@@ -107,7 +107,7 @@ export default {
 				idx: this.pageStorage.selectItemList[0].idx
       }).then(rs => {
         if(rs.status == 'Y'){
-          for(var i in rs.data){
+          for(let i in rs.data){
             rs.data[i].name = rs.data[i].title;
           }
           this.option.tagScript.list = rs.data;

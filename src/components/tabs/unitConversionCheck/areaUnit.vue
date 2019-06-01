@@ -236,14 +236,14 @@ export default {
   beforeMount: function() {},
 
   created() {
-    var _this = this;
+    let _this = this;
     _this.$http
       .post("/basic_api/unit_convert_list", {
         type: 1,
         userid: this.$store.getters.getLoginInfo.loginInfo.id
       })
       .then(response => {
-        var list = response.data ? response.data : [];
+        let list = response.data ? response.data : [];
         this.initialize(list);
       })
       .catch(function(error) {
@@ -308,7 +308,7 @@ export default {
     },
     // 저장할 데이터 만들기
     makeRq() {
-      var rq = {
+      let rq = {
           userid: this.$store.getters.getLoginInfo.loginInfo.id,
           type: 1,
           unit: this.editedItem.areaUnit,
@@ -350,7 +350,7 @@ export default {
         });
     },
     update() {
-      var rq = this.makeRq();
+      let rq = this.makeRq();
       rq.idx = this.editedItem.idx;
       this.$http
         .post("/basic_api/unit_convert_edit", rq)
@@ -373,7 +373,7 @@ export default {
         });
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

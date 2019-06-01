@@ -49,7 +49,7 @@ export default {
           if (rs.status == "Y") {
             console.log(rs)
             this.list = rs.data;
-            for(var i in rs.data){
+            for(let i in rs.data){
               if(rs.data[i].val){
                 this.autoList.push(rs.data[i].val)
               }
@@ -99,7 +99,7 @@ export default {
         .then(rs => {
           this.autoList = [];
           if (rs.status == "Y") {
-            for(var i in rs.data){
+            for(let i in rs.data){
               this.autoList.push(rs.data[i].val)
             }
           }

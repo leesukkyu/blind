@@ -10,7 +10,7 @@ Vue.directive('focus', {
 
 Vue.directive('comma', {
     inserted: function (el) {
-        var $input = el.querySelectorAll('input')[0];
+        let $input = el.querySelectorAll('input')[0];
         $input.addEventListener('keyup', function(){
             $input.value = $input.value.replace(/[^0-9]/g,"").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         })

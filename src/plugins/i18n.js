@@ -1352,7 +1352,7 @@ const messages = {
   },
 }
 Vue.use(VueI18n);
-var i18n = new VueI18n({
+let i18n = new VueI18n({
   locale: 'korean', // set locale
   messages, // set locale messages
 })

@@ -188,7 +188,7 @@ export default {
         });
     },
     save: function() {
-      var rq;
+      let rq;
       rq = this.editedItem;
       rq.userid = this.$store.getters.getLoginInfo.loginInfo.id;
       rq.idx = this.pageStorage.productTreeActiveItemList[0].idx;

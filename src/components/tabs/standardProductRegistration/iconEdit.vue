@@ -58,7 +58,7 @@ export default {
             .then(rs => {
               if ((rs.status = "Y")) {
                 this.eventBus.$emit("requestIconTreeLoad");
-                for (var i in this.option.tagScript.list) {
+                for (let i in this.option.tagScript.list) {
                   if (this.option.tagScript.list[i].idx == data.item.idx) {
                     this.option.tagScript.list.splice(i, 1);
                     break;
@@ -79,7 +79,7 @@ export default {
               console.log("xxxx");
               if ((rs.status = "Y")) {
                 this.eventBus.$emit("requestIconTreeLoad");
-                for (var i in this.option.tagScript.list) {
+                for (let i in this.option.tagScript.list) {
                   if (this.option.tagScript.list[i].idx == data.item.idx) {
                     this.option.tagScript.list[i].name = data.newName;
                     this.option.tagScript.list[i].text = data.newName;
@@ -109,14 +109,14 @@ export default {
       this.onChangeIconTreeActiveList();
     },
     onChangeIconTreeActiveList: function() {
-      var item, type;
+      let item, type;
       if (this.pageStorage.iconTreeActiveItemList.length) {
         item = this.pageStorage.iconTreeActiveItemList[0];
         type = item.type;
         if (type == "인") {
           this.option.tagScript.disabled = false;
           if (this.pageStorage.iconTreeActiveItemList.length) {
-            for (var i in item.child) {
+            for (let i in item.child) {
               item.child[i].name = item.child[i].text;
             }
             this.option.tagScript.list = item.child;
@@ -124,7 +124,7 @@ export default {
         } else if (type == "세") {
           this.option.tagScript.disabled = false;
           if (this.pageStorage.iconTreeActiveItemList.length) {
-            for (var i in item.child) {
+            for (let i in item.child) {
               item.child[i].name = item.child[i].text;
             }
             this.option.tagScript.list = item.child;

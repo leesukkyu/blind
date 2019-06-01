@@ -181,7 +181,7 @@ export default {
 
   methods: {
     init() {
-      var _this = this;
+      let _this = this;
       console.log("textDataEditInit");
       if (this.pageStorage.productTreeActiveItemList.length) {
         _this.$http
@@ -193,7 +193,7 @@ export default {
           })
           .then(response => {
             console.log(response);
-            var list = response.data ? response.data : [];
+            let list = response.data ? response.data : [];
             this.initialize(list);
           })
           .catch(function(error) {
@@ -312,7 +312,7 @@ export default {
         });
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

@@ -206,7 +206,7 @@ export default {
     type: function() {
       this.option.table.selectedList = [];
       this.option.tree.selectedList = [];
-      for (var i in this.option.table.activePropsMap) {
+      for (let i in this.option.table.activePropsMap) {
         console.log((this.option.table.activePropsMap[i].expanded = false));
       }
     }
@@ -219,7 +219,7 @@ export default {
       this.option.table.list = list;
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {
@@ -243,8 +243,8 @@ export default {
             au_idx: this.option.table.activeItemList[0].idx
           })
           .then(rs => {
-            var list = [];
-            for (var i in rs.data) {
+            let list = [];
+            for (let i in rs.data) {
               list.push(rs.data[i].menu_code);
             }
             this.$set(this.option.tree, "selectedList", list);
@@ -255,8 +255,8 @@ export default {
       }
     },
     save() {
-      var menuIdxList = [];
-      for (var i in this.option.tree.selectedList) {
+      let menuIdxList = [];
+      for (let i in this.option.tree.selectedList) {
         menuIdxList[i] = this.menuCodeMap[this.option.tree.selectedList[i]];
       }
       this.$http
@@ -305,9 +305,9 @@ export default {
       console.log(this.type);
     },
     createMenuCodeMap: (function() {
-      var menuCodeMap = {};
-      var loop = function(list, parent) {
-        for (var i in list) {
+      let menuCodeMap = {};
+      let loop = function(list, parent) {
+        for (let i in list) {
           menuCodeMap[list[i].code] = list[i].idx;
           if (list[i].child) {
             loop(list[i].child, list[i]);
@@ -316,7 +316,7 @@ export default {
       };
       return function(list) {
         menuCodeMap = {};
-        for (var i in list) {
+        for (let i in list) {
           menuCodeMap[list[i].code] = list[i].idx;
           if (list[i].child) {
             loop(list[i].child, list[i]);

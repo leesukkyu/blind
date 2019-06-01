@@ -74,7 +74,7 @@ export default {
             .then(rs => {
               if ((rs.status = "Y")) {
                 this.eventBus.$emit("requestProductTreeLoad");
-                for (var i in this.option.tagScriptCode.list) {
+                for (let i in this.option.tagScriptCode.list) {
                   if (this.option.tagScriptCode.list[i].idx == data.item.idx) {
                     this.option.tagScriptCode.list.splice(i, 1);
                     break;
@@ -99,7 +99,7 @@ export default {
               .then(rs => {
                 // 중복인 경우 데이터 원상 복구
                 if (rs.status == "Y") {
-                  for (var i in this.option.tagScriptCode.list) {
+                  for (let i in this.option.tagScriptCode.list) {
                     if (
                       this.option.tagScriptCode.list[i].idx == data.item.idx
                     ) {
@@ -140,7 +140,7 @@ export default {
             .then(rs => {
               if ((rs.status = "Y")) {
                 this.eventBus.$emit("requestProductTreeLoad");
-                for (var i in this.option.tagScriptCode.list) {
+                for (let i in this.option.tagScriptCode.list) {
                   if (this.option.tagScriptCode.list[i].idx == data.item.idx) {
                     this.option.tagScriptCode.list[i].name = data.newName;
                     this.option.tagScriptCode.list[i].code = data.newCode;
@@ -184,7 +184,7 @@ export default {
         .then(rs => {
           console.log(rs);
           if (rs.status == "Y") {
-            for (var i in rs.data) {
+            for (let i in rs.data) {
               rs.data[i]["fullName"] = rs.data[i].code + "-" + rs.data[i].name;
             }
             this.option.tagScriptCode.list = rs.data;

@@ -224,7 +224,7 @@ export default {
       this.option.table.list = list;
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

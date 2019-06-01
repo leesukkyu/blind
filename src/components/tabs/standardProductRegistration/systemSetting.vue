@@ -127,8 +127,8 @@ export default {
         });
     },
     save: function() {
-      var _editedItem;
-      var rq;
+      let _editedItem;
+      let rq;
       _editedItem = this.$util.copy(this.editedItem);
       rq = this.editedItem;
       rq.userid = this.$store.getters.getLoginInfo.loginInfo.id;

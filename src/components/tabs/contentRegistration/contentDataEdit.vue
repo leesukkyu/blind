@@ -102,8 +102,8 @@ export default {
       }
     },
     upload: function($input) {
-      var data = new FormData();
-      var _this = this;
+      let data = new FormData();
+      let _this = this;
       data.append("idx", this.pageStorage.productTreeActiveItemList[0].idx);
       data.append("type", this.pageStorage.productTreeActiveItemList[0].type);
       data.append("userid", this.$store.getters.getLoginInfo.loginInfo.id);
@@ -145,7 +145,7 @@ export default {
       }
     },
     onChangeIconTreeActiveList: function() {
-      var type;
+      let type;
       console.log("xxx");
       if (this.pageStorage.productTreeActiveItemList.length) {
         type = this.pageStorage.productTreeActiveItemList[0].type;
@@ -160,7 +160,7 @@ export default {
             if ((rs.status = "Y")) {
               this.list = rs.data;
               if (this.list && this.list.length) {
-                for (var i in this.list) {
+                for (let i in this.list) {
                   if (this.list[i].chk_icon == "Y") {
                     this.value = +i;
                   }

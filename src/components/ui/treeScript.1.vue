@@ -47,10 +47,10 @@ export default {
     activeItemList: {
       immediate: false,
       handler: function(newData, oldData) {
-        var itemList = [];
+        let itemList = [];
         // 부모 this로 바인딩
         if (this.parentThis) {
-          for (var i in newData) {
+          for (let i in newData) {
             itemList.push(this.searchItem(newData[i]));
           }
           this.onClick.call(this.parentThis, { itemList: itemList });
@@ -75,7 +75,7 @@ export default {
     }
   },
   created() {
-    // var _this = this;
+    // let _this = this;
     // setTimeout(function() {
     //   _this.activeItemList.push("mn2_00001");
     //   console.log(this.activeItemList);
@@ -83,12 +83,12 @@ export default {
   },
   methods: {
     searchItem: (function() {
-      var _key, result;
-      var search = function(list) {
+      let _key, result;
+      let search = function(list) {
         if (result != null) {
           return;
         }
-        for (var i in list) {
+        for (let i in list) {
           if (list[i].key == _key) {
             result = list[i];
             return list[i];

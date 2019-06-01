@@ -216,14 +216,14 @@ export default {
   },
   methods: {
     init: function() {
-      var _this = this;
+      let _this = this;
       _this.$http
         .post("/goods_api/goods_standard_list", {
           userid: this.$store.getters.getLoginInfo.loginInfo.id,
           gc_idx: this.pageStorage.productTreeActiveItemList[0].idx
         })
         .then(response => {
-          var list = response.data ? response.data : [];
+          let list = response.data ? response.data : [];
           this.initialize(list);
         })
         .catch(function(error) {
@@ -249,7 +249,7 @@ export default {
     },
     openAddDialog: function(item) {
       this.nameList = [];
-      for (var i in this.option.table.list) {
+      for (let i in this.option.table.list) {
         this.nameList.push(this.option.table.list[i].name);
       }
       this.addDialogYn = true;
@@ -364,7 +364,7 @@ export default {
       this.eventBus.$emit("clickStandardEdit");
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

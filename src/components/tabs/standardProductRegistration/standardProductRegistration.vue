@@ -458,7 +458,7 @@ export default {
     },
     onChangeActiveTab: function() {
       this.$nextTick(function() {
-        var name = this.pageStorage.tabObject.name;
+        let name = this.pageStorage.tabObject.name;
         // 브랜드 편집 탭을 누른 경우
         if (name == "brandEdit") {
           this.$refs.brandEdit[0].init();
@@ -583,7 +583,7 @@ export default {
     },
     // 상품 트리에서 누른 경우
     onChangeProductTreeActiveList: function() {
-      var item, type;
+      let item, type;
       if (this.pageStorage.productTreeActiveItemList.length) {
         item = this.pageStorage.productTreeActiveItemList[0];
         type = this.pageStorage.productTreeActiveItemList[0].type;
@@ -910,7 +910,7 @@ export default {
     // 아이콘 트리에서 누른 경우
     onChangeIconTreeActiveList: function() {
       if (this.pageStorage.iconTreeActiveItemList.length) {
-        var type = this.pageStorage.iconTreeActiveItemList[0].type;
+        let type = this.pageStorage.iconTreeActiveItemList[0].type;
         switch (type) {
           case "인":
           case "아":

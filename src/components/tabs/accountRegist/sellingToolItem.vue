@@ -259,7 +259,7 @@ export default {
       this.option.table.list = list;
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {
@@ -300,7 +300,7 @@ export default {
         this.$refs.image.value = "";
         return;
       }
-      var data = new FormData();
+      let data = new FormData();
       data.append("idx", this.selectItemList[0].idx);
       data.append("app_code", this.selectItemList[0].app_code);
       data.append("file", event.target.files[0]);

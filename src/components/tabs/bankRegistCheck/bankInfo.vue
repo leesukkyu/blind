@@ -204,13 +204,13 @@ export default {
   beforeMount: function() {},
 
   created() {
-    var _this = this;
+    let _this = this;
     _this.$http
       .post("/basic_api/bank_regist_bank_list", {
         userid: this.$store.getters.getLoginInfo.loginInfo.id
       })
       .then(response => {
-        var list = response.data ? response.data : [];
+        let list = response.data ? response.data : [];
         this.initialize(list);
       })
       .catch(function(error) {
@@ -241,7 +241,7 @@ export default {
         })
         .then(rs => {
           this.cardList = [];
-          for (var i in rs.data) {
+          for (let i in rs.data) {
             this.cardList.push(rs.data[i].name);
           }
         });
@@ -342,7 +342,7 @@ export default {
         });
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

@@ -155,7 +155,7 @@ export default {
     },
     onChangeActiveTab: function() {
       this.$nextTick(function() {
-        var name = this.pageStorage.tabObject.name;
+        let name = this.pageStorage.tabObject.name;
         // 썸네일 탭을 누른 경우
         if (name == "thumbnail") {
           this.$refs.thumbnail[0].init();
@@ -181,7 +181,7 @@ export default {
     // 상품 트리에서 누른 경우
     onChangeProductTreeActiveList: function() {
       this.onChangeActiveTab();
-      // var item, type;
+      // let item, type;
       // if (this.pageStorage.productTreeActiveItemList.length) {
       //   item = this.pageStorage.productTreeActiveItemList[0];
       //   type = this.pageStorage.productTreeActiveItemList[0].type;

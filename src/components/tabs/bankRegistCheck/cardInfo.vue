@@ -185,13 +185,13 @@ export default {
   beforeMount: function() {},
 
   created() {
-    var _this = this;
+    let _this = this;
     _this.$http
       .post("/basic_api/bank_regist_card_list", {
         userid: this.$store.getters.getLoginInfo.loginInfo.id
       })
       .then(response => {
-        var list = response.data ? response.data : [];
+        let list = response.data ? response.data : [];
         this.initialize(list);
       })
       .catch(function(error) {
@@ -309,7 +309,7 @@ export default {
         });
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

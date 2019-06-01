@@ -50,7 +50,7 @@ export default {
           userid: this.$store.getters.getLoginInfo.loginInfo.id
         })
         .then(rs => {
-          for(var i in rs.data){
+          for(let i in rs.data){
             rs.data[i].type = '브'
           }
           this.option.tree.list = rs.data;

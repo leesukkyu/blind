@@ -328,7 +328,7 @@ export default {
       }
     },
     makeRq() {
-      var rq = {
+      let rq = {
         idx: this.editedItem.idx,
         user_cnt: this.editedItem.user_cnt,
         device_cnt: this.editedItem.device_cnt,
@@ -372,7 +372,7 @@ export default {
         });
     },
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {

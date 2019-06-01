@@ -99,7 +99,7 @@ export default {
       }
     },
     upload: function($input) {
-      var data = new FormData();
+      let data = new FormData();
       data.append("userid", this.$store.getters.getLoginInfo.loginInfo.id);
       data.append("idx", this.pageStorage.iconTreeActiveItemList[0].idx);
       data.append("file", $input.files[0]);
@@ -136,7 +136,7 @@ export default {
       }
     },
     onChangeIconTreeActiveList: function() {
-      var type;
+      let type;
       if (this.pageStorage.iconTreeActiveItemList.length) {
         type = this.pageStorage.iconTreeActiveItemList[0].type;
         if (type == "아" || type == "구") {
@@ -149,7 +149,7 @@ export default {
               if ((rs.status = "Y")) {
                 this.list = rs.data;
                 if (this.list && this.list.length) {
-                  for (var i in this.list) {
+                  for (let i in this.list) {
                     if (this.list[i].chk_icon == "Y") {
                       this.value = +i;
                     }

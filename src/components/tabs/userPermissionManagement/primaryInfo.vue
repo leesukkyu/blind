@@ -345,7 +345,7 @@ export default {
   beforeMount: function() {},
 
   created() {
-    var _this = this;
+    let _this = this;
     _this.$http
       .post("/basic_api/basic_info_member_list", {
         app_idx: this.$store.getters.getLoginInfo.loginInfo.app_idx,
@@ -353,7 +353,7 @@ export default {
       })
       .then(response => {
         console.log(response);
-        var list = response.data ? response.data : [];
+        let list = response.data ? response.data : [];
         this.initialize(list);
       })
       .catch(function(error) {
@@ -426,7 +426,7 @@ export default {
 
     // 저장할 데이터 만들기
     makeRq() {
-      var rq = {
+      let rq = {
         app_idx: this.$store.getters.getLoginInfo.loginInfo.app_idx,
         company_num: this.editedItem.company_num,
         name: this.editedItem.name,
@@ -480,7 +480,7 @@ export default {
 
     // 업데이트
     update() {
-      var rq = this.makeRq();
+      let rq = this.makeRq();
       rq.idx = this.editedItem.idx;
       this.loading.regist = true;
       this.$http
@@ -516,7 +516,7 @@ export default {
     },
 
     changeSort(header) {
-      var column;
+      let column;
       if (header.sortable) {
         column = header.value;
         if (this.option.table.pagination.sortBy === column) {
